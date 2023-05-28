@@ -1,7 +1,18 @@
-export default function Home() {
+import { aboutMe, skills , professionalData} from '@/data/page-data'
+import React from 'react'
+import AboutMe from './component/about-me'
+import ProfessionalExperience from './component/professional-experience'
+
+const page = () => {
   return (
-    <h2 className="text-3xl font-bold underline">
-      Hi There, I am Muhammad Azad.
-    </h2>
+    <>
+    
+    <AboutMe data={aboutMe} skills={skills}/>
+    <ProfessionalExperience data={professionalData}/>
+
+    
+    </>
   )
 }
+
+export default page

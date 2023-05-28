@@ -1,5 +1,6 @@
+import Sidebar from './component/sidebar'
 import './globals.css'
-
+import { personalData } from '../data/page-data';
 export default function RootLayout({
   children,
 }: {
@@ -7,12 +8,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+     
       <head />
-      <body>{children}</body>
+      <body className='flex flex-col sm:flex-row'>
+        <Sidebar data={personalData} />
+       <main className='grow-full p-8 sm:p-16 w-full sm:basis-2/3 ml-auto'>
+         {children}
+       </main>
+        </body>
     </html>
   )
 }
